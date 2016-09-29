@@ -3,10 +3,10 @@ Vagrant.configure(2) do |config|
   #config.vm.box = "chef/fedora-20"
   #config.ssh.username = 'vagrant'
   #config.ssh.password = 'vagrant'
-  #config.ssh.insert_key = 'false'
-  config.ssh.forward_agent = 'true'
+  config.ssh.insert_key = 'false'
+  #config.ssh.forward_agent = 'true'
   #config.ssh.private_key_path = "/Users/johnnywa/gitlab/ansible-saio/.vagrant/machines/server0/virtualbox/id_rsa"
-  config.ssh.private_key_path = "/Users/johnnywa/gitlab/saio-ansible/.vagrant/machines/server0/key/vagrant_id_rsa"
+  #config.ssh.private_key_path = "/Users/johnnywa/gitlab/saio-ansible/.vagrant/machines/server0/key/vagrant_id_rsa"
   VMS = 1
   (0..VMS-1).each do |vm|
     config.vm.define "server#{vm}" do |g|
