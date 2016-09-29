@@ -1,6 +1,6 @@
 SAIO Ansible playbook
 =====================
-##Boot Cent7 and Build SAIO 
+###Boot Cent7 and Build SAIO 
  1. `vagrant up`
 
 ##SSH to the Box
