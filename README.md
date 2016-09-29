@@ -13,13 +13,16 @@ SAIO Ansible playbook via Vagrant
  1. `swift list `
  1. `swift list test_container`
  
-- **double check
+- double check
+
  1. `swift stat -v`
 
 ###Wipe Out
-- **Back to Local
+- Back to Local
+
  1. `exit`
  
-- **Delete all 
+- Delete all 
+
  1. `vagrant destroy`
 
