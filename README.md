@@ -1,5 +1,5 @@
-SAIO Ansible playbook
-=====================
+SAIO Ansible playbook via Vagrant
+=================================
 ###Boot Cent7 and Build SAIO 
  1. `vagrant up`
 
