@@ -1,5 +1,5 @@
 ---
-user: "vagrant"
+username: "vagrant"
 #password: "vagrant"
 group: "vagrant"
 source_dir: "/vagrant/source"
@@ -8,7 +8,7 @@ source_dir: "/vagrant/source"
 configure_gerrit: no
 #openstack_username: <your_openstack_gerrit_username>
 private_key_filename: "vagrant_id_rsa"
-private_key_local_filepath: "/Users/johnnywa/gitlab/ansible-saio/.vagrant/machines/server0/key/"
+private_key_local_filepath: "/Users/johnnywa/gitlab/saio-ansible/.vagrant/machines/server0/key/"
 
 #configure_swiftonfile: yes|no
 configure_swiftonfile: no
