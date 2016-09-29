@@ -12,7 +12,12 @@ SAIO Ansible playbook
  1. `swift upload test_container test.txt`
  1. `swift list `
  1. `swift list test_container`
+####double check
+ 1. `swift stat -v`
 
 ###Wipe Out
+####Back to Local
+ 1. `exit`
+####Delete all 
  1. `vagrant destroy`
 
