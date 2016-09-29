@@ -13,7 +13,7 @@ SAIO Ansible playbook via Vagrant
  1. `swift list `
  1. `swift list test_container`
  
-- double check
+- Double Check
  1. `swift stat -v`
  
 - Back to Local
