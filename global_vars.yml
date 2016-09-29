@@ -1,0 +1,21 @@
+---
+user: "vagrant"
+#password: "vagrant"
+group: "vagrant"
+source_dir: "/vagrant/source"
+
+# configure gerrit repo to do reviews
+configure_gerrit: no
+#openstack_username: <your_openstack_gerrit_username>
+private_key_filename: "vagrant_id_rsa"
+private_key_local_filepath: "/Users/johnnywa/gitlab/ansible-saio/.vagrant/machines/server0/key/"
+
+#configure_swiftonfile: yes|no
+configure_swiftonfile: no
+
+#default_storage_policy: gold|silver|ec42|swiftonfile
+default_storage_policy: gold
+
+configure_hummingbird: no
+golang_bin: https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
+gopath: /home/{{ username }}/go_work

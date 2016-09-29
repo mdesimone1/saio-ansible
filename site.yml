@@ -1,0 +1,18 @@
+# Using github url as key source
+#- authorized_key: user=vagrant key="/Users/johnnywa/gitlab/ansible-saio/.vagrant/machines/server0/key/vagrant_id_rsa"
+
+- hosts: all
+  sudo: True
+  vars_files:
+    - "global_vars.yml"
+  environment:
+    LD_LIBRARY_PATH: /usr/local/lib
+    USER: vagrant
+  roles:
+#- {role: pre_config, when: "{{ configure_gerrit }}" }
+    - pre_config
+    - liberasurecode
+    - swift
+    - {role: swiftonfile, when: "{{ configure_swiftonfile }}" }
+    - {role: hummingbird, when: "{{ configure_hummingbird }}" }
+    - post_config
