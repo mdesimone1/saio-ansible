@@ -1,12 +1,6 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "bento/centos-7.2"
-  #config.vm.box = "chef/fedora-20"
-  #config.ssh.username = 'vagrant'
-  #config.ssh.password = 'vagrant'
   config.ssh.insert_key = 'false'
-  #config.ssh.forward_agent = 'true'
-  #config.ssh.private_key_path = "/Users/johnnywa/gitlab/ansible-saio/.vagrant/machines/server0/virtualbox/id_rsa"
-  #config.ssh.private_key_path = "/Users/johnnywa/gitlab/saio-ansible/.vagrant/machines/server0/key/vagrant_id_rsa"
   VMS = 1
   (0..VMS-1).each do |vm|
     config.vm.define "server#{vm}" do |g|
@@ -16,7 +10,7 @@ Vagrant.configure(2) do |config|
             vb.memory = 2048
             vb.cpus = 2
         end
-
+        #ansible-playbook site.yml -i "172.0.0.1:2200,"
         if vm == (VMS-1)
             g.vm.provision :ansible do |ansible|
                 ansible.playbook = "site.yml"
