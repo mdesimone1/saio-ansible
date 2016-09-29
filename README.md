@@ -1,5 +1,13 @@
 SAIO Ansible playbook via Vagrant
 =================================
+
+This project assumes you have Virtualbox and Vagrant.
+
+ * https://www.virtualbox.org/wiki/Downloads
+ * http://www.vagrantup.com/downloads.html
+ 
+- PS: I use VirtualBox 5.1.6 r110634 and Vagrant 1.8.5
+
 ###Boot Cent7 and Build SAIO 
  1. `vagrant up`
 
