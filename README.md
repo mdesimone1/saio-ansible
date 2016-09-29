@@ -16,8 +16,10 @@ SAIO Ansible playbook
  1. `swift stat -v`
 
 ###Wipe Out
+
 ####Back to Local
  1. `exit`
+ 
 ####Delete all 
  1. `vagrant destroy`
 
