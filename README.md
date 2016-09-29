@@ -12,6 +12,7 @@ SAIO Ansible playbook
  1. `swift upload test_container test.txt`
  1. `swift list `
  1. `swift list test_container`
+ 
 ####double check
  1. `swift stat -v`
 
