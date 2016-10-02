@@ -1,0 +1,26 @@
+- name: Create instance(s)
+  hosts: 127.0.0.1
+  connection: local
+  gather_facts: False
+  vars:
+    instance_name: foo
+    service_account_email: <xxxx@saio-145021.iam.gserviceaccount.com>
+    credentials_file: </home/johnny/Desktop/gce/SAIO-xxxx.json>
+    project_id: <saio-xxxx>
+    machine_type: n1-standard-1
+    image: centos-7-v20160921
+  tasks:
+   - name: Launch instances
+     gce:
+       instance_names: "{{ instance_name }}"
+       machine_type: "{{ machine_type }}"
+       image: "{{ image }}"
+       service_account_email: "{{ service_account_email }}"
+       credentials_file: "{{ credentials_file }}"
+       project_id: "{{ project_id }}"
+     register: gce
+
+   - name: Wait for SSH to come up
+     wait_for: host={{ item.public_ip }} port=22 delay=10 timeout=60
+     with_items: gce.instance_data
+

@@ -1,0 +1,11 @@
+- name: Terminate instances
+  hosts: localhost
+  connection: local
+  vars:
+      gce_instance_names: foo
+  tasks:
+    - name: Terminate instances that were previously launched
+      local_action:
+        module: gce
+        state: 'absent'
+        instance_names: "{{gce_instance_names}}"
