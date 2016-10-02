@@ -4,7 +4,7 @@
     - "global_vars.yml"
   environment:
     LD_LIBRARY_PATH: /usr/local/lib
-    USER: vagrant
+    USER: johnnywa
   roles:
     - pre_config
     - liberasurecode
