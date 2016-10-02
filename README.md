@@ -1,3 +1,11 @@
+Purpose of this Git Repo
+=================================
+This repo provide ansible code to build an SAIO system on
+ * GCE ( Google Cloud Platform )
+ * Local VirtualBox via Vagrant
+ * AWS ( Amazon Web Service / EC2 )
+
+
 SAIO Ansible playbook via GCE
 =================================
 ## Google Cloud Preparation
