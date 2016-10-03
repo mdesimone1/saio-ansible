@@ -67,6 +67,7 @@ GCE_KEYWORD_PARAMS = {'project': 'project_id'}
 
 ### Install apache-libcloud for ansible gce driver 
 Ansible contains modules for managing Google Compute Engine resources, including creating instances, controlling network access, working with persistent disks, and managing load balancers. Additionally, there is an inventory plugin that can automatically suck down all of your GCE instances into Ansible dynamic inventory, and create groups by tag and other properties.
+
 1. The GCE modules all require the apache-libcloud module which you can install from pip: `sudo pip install apache-libcloud`
 
 ## Build and Test
