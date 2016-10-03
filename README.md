@@ -5,6 +5,8 @@ This repo provide ansible code to build an SAIO system on
  * Local VirtualBox via Vagrant
  * AWS ( Amazon Web Service / EC2 )
 
+1. Before start, Please make sure you do install ansible
+`sudo pip install ansible`
 
 SAIO Ansible playbook via GCE
 =================================
@@ -62,6 +64,10 @@ GCE_KEYWORD_PARAMS = {'project': 'project_id'}
 1. Find out your $PYTHONPATH `python -c "import sys; print sys.path"`
  * for example : "/usr/local/lib/python2.7/dist-packages"
 1. move your secrets.py to $PYTHONPATH `mv ./secrets.py /usr/local/lib/python2.7/dist-packages`
+
+### Install apache-libcloud for ansible gce driver 
+Ansible contains modules for managing Google Compute Engine resources, including creating instances, controlling network access, working with persistent disks, and managing load balancers. Additionally, there is an inventory plugin that can automatically suck down all of your GCE instances into Ansible dynamic inventory, and create groups by tag and other properties.
+1. The GCE modules all require the apache-libcloud module which you can install from pip: `sudo pip install apache-libcloud`
 
 ## Build and Test
 ### Boot Cent7 VM
