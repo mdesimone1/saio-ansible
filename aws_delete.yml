@@ -1,0 +1,33 @@
+# demo_setup.yml
+- hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    instance_name: foo
+    ami_id: ami-d1315fb1
+    aws_access_key: xxxx
+    aws_secret_key: xxxx
+    key_name: johnnywa
+    security_group: default
+    instance_type: t2.medium
+    wait: true
+    assign_public_ip: yes
+    vpc_subnet_id: subnet-93bf67f7
+    region: us-west-1a
+    instance_ids: i-fc60c36b
+    state: absent # present, absent, running, restarted, stopped
+  tasks:
+   - name: Provision a set of instances
+     ec2:
+       aws_access_key: "{{ aws_access_key }}"
+       aws_secret_key: "{{ aws_secret_key }}"
+       key_name: "{{ key_name }}"
+       instance_ids: "{{ instance_ids }}"
+       instance_tags:
+           Name: "{{ instance_name }}"
+       state: 
+     register: ec2
+
+   - name: Add all instance public IPs to host group
+     add_host: hostname={{ item.public_ip }} groups=ec2hosts
+     with_items: ec2.instances
