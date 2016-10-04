@@ -161,6 +161,11 @@ SAIO ansible playbook via AWS ( EC2 )
 =================================
 ## AWS Preparation
 You use access keys to sign programmatic requests that you make to AWS if you use the AWS SDKs, REST, or Query APIs. The AWS SDKs use your access keys to sign requests for you, so that you don't have to handle the signing process.
+
+### Boto AWS Module for ansible
+All of the modules require and are tested against recent versions of boto. You’ll need this Python module installed on your control machine. Boto can be installed from your OS distribution or python’s.
+1. `sudo pip install boto`
+
 ### AWS Access keys (access key ID and secret access key) Setup
 Original Reference from AWS Doc: [Managing Access Keys for your AWS Account](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html)
 #### via Security Credentials - Creating, Disabling, and Deleting Access Keys for your AWS Account
@@ -212,7 +217,7 @@ At this point you should have
    * Import your own Public Key and keep your own private key in ~/.ssh/
 
 ## Build and Test
-### Boot Cent7 VM
+### Boot RHEL7 VM (AWS doesn't provide official CentOS-7)
 1. `cd aws`
 1. `ansible-playbook aws_create.yml`
 1. find out external ip in AWS Management Console -> EC2 -> Select VM --> Description Tab Or from ansible output
