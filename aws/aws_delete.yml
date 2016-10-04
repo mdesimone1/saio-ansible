@@ -14,7 +14,7 @@
     assign_public_ip: yes
     vpc_subnet_id: subnet-93bf67f7
     region: us-west-1a
-    instance_ids: i-fc60c36b
+    instance_ids: i-5b67c4cc #i-fc60c36b
     state: absent # present, absent, running, restarted, stopped
   tasks:
    - name: Provision a set of instances
@@ -25,9 +25,10 @@
        instance_ids: "{{ instance_ids }}"
        instance_tags:
            Name: "{{ instance_name }}"
-       state: 
+       state: "{{ state }}"
+       region: "{{ region }}"
      register: ec2
 
-   - name: Add all instance public IPs to host group
+   - name: Get the response from terminate instance (Add all instance public IPs to host group)
      add_host: hostname={{ item.public_ip }} groups=ec2hosts
      with_items: ec2.instances
