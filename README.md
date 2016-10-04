@@ -55,13 +55,6 @@ Service Account for API Access.
 
    PS: if you don't have public key check it out [Generate SSH Key](https://cloud.google.com/compute/docs/instances/connecting-to-instance#generatesshkeypair)
 
-1. In sum you should have three important info as below and add your public key
-   into gce already.
- * google_project_id
- * google_client_email
- * google_json_key_location
- * added your new project-wide SSH key.
-
 ### Google Cloud Connection via Configuring Modules with secrets.py
  * If you don't want to specify above info in your Ansible code, you can create
    secrets.py into your $PYTHONPATH
@@ -79,6 +72,13 @@ GCE_KEYWORD_PARAMS = {'project': 'project_id'}
 Ansible contains modules for managing Google Compute Engine resources, including creating instances, controlling network access, working with persistent disks, and managing load balancers. Additionally, there is an inventory plugin that can automatically suck down all of your GCE instances into Ansible dynamic inventory, and create groups by tag and other properties.
 
 1. The GCE modules all require the apache-libcloud module which you can install from pip: `sudo pip install apache-libcloud`
+
+### In sum you should have 5 important info and task done as below.
+ * Install apache-libcloud
+ * google_project_id
+ * google_client_email
+ * google_json_key_location
+ * added your new project-wide SSH key.
 
 ## Build and Test
 ### Boot Cent7 VM
@@ -211,6 +211,7 @@ For Amazon EC2, you use key pairs to access Amazon EC2 instances, such as when y
 
 ### Sum of AWS Preparation
 At this point you should have
+ * Install boto
  * Access Key ID:
  * Secret Access Key:
  * create or import SSH key
@@ -235,11 +236,13 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
 ```
 
 ### Build SAIO
-1. `cd ..` Back to root directory
-1. `ansible-playbook site.yml -i "<gce external ip>,"`
 
 #### AWS Build Output Screenshot
-* https://gist.github.com/chianingwang/9324671187713f41a0b4eee5c209def8
+ * https://gist.github.com/chianingwang/047f9035559c5119d80c0c3011d9c962
+
+#### Install SAIO on AWS EC2 VM
+1. `cd ..` Back to root directory
+1. `ansible-playbook site.yml -i "<gce external ip>,"`
 
 ### SSH to the Box
 1. `ssh <aws external ip>`
@@ -258,6 +261,6 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
 1. `exit`
 
 ## Clean Up
-### Wipe Out GCE VM
+### Wipe Out AWS VM
 1. `cd aws`
 1. `ansible-playbook aws_delete.yml`
