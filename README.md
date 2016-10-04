@@ -163,7 +163,8 @@ SAIO ansible playbook via AWS ( EC2 )
 You use access keys to sign programmatic requests that you make to AWS if you use the AWS SDKs, REST, or Query APIs. The AWS SDKs use your access keys to sign requests for you, so that you don't have to handle the signing process.
 
 ### Boto AWS Module for ansible
-All of the modules require and are tested against recent versions of boto. You’ll need this Python module installed on your control machine. Boto can be installed from your OS distribution or python’s.
+All of the modules require and are tested against recent versions of ***boto***. You’ll need this Python module installed on your control machine.
+
 1. `sudo pip install boto`
 
 ### AWS Access keys (access key ID and secret access key) Setup
