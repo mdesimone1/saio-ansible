@@ -215,7 +215,7 @@ At this point you should have
 ### Boot Cent7 VM
 1. `cd aws`
 1. `ansible-playbook aws_create.yml`
-1. find out external ip in Google Cloud Platform -> Compute Engine -> VM Instances
+1. find out external ip in AWS Management Console -> EC2 -> Select VM --> Description Tab Or from ansible output
 ```
 TASK [Add all instance public IPs to host group] *******************************
 [DEPRECATION WARNING]: Using bare variables is deprecated. Update your playbooks so that the environment value uses the full variable syntax
@@ -232,7 +232,7 @@ localhost                  : ok=2    changed=2    unreachable=0    failed=0
 1. `cd ..` Back to root directory
 1. `ansible-playbook site.yml -i "<gce external ip>,"`
 
-#### GCE Build Output Screenshot
+#### AWS Build Output Screenshot
 * https://gist.github.com/chianingwang/9324671187713f41a0b4eee5c209def8
 
 ### SSH to the Box
