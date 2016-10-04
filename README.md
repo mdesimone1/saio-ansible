@@ -9,7 +9,7 @@ This repo provides ansible playbooks to build an SAIO system on
 `sudo pip install ansible`
 
 1. all the ansible for trigger from local ( control node )
-In your playbook steps we’ll typically be using the following pattern for provisioning steps:
+In your playbook, the following pattern for provisioning steps will be using:
 ```
 - hosts: localhost
   connection: local
