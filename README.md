@@ -96,7 +96,10 @@ ok: [127.0.0.1] => (item={u'status': u'RUNNING', u'network': u'default', u'zone'
 
 ### Build SAIO
 1. `cd ..` Back to root directory
-1. change "johnnywa" to your user name which should match a. private key user name, b. ssh user with /home/<username> in "**site.yml**" and "**global_vars.yml**"
+1. change "johnnywa" to your user name which should match 
+ 1. private key user name, 
+ 1. ssh user with /home/<username> 
+ * in "**site.yml**" and "**global_vars.yml**"
 1. `ansible-playbook site.yml -i "<gce external ip>,"`
 
 #### GCE Build Output Screenshot
