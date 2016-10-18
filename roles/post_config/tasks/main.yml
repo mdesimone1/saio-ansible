@@ -76,8 +76,14 @@
     become_user: swift
     command: /home/{{ username }}/bin/resetswift
     when: not configure_hummingbird
+    failed_when: false
 
   - name: start swift
     become_user: swift
     command: /home/{{ username }}/bin/startmain
     when: not configure_hummingbird
+    failed_when: false
+
+  - name: check swift stat
+    command: swift stat
+
