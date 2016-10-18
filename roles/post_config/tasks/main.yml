@@ -84,6 +84,6 @@
     when: not configure_hummingbird
     failed_when: false
 
-  - name: check swift stat
-    command: swift stat
+  - name: check swift processes
+    shell: ps -e f|grep -c [s]wift-proxy-server
 
